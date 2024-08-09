@@ -5,10 +5,31 @@ import locale
 locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8')
 # --------------------------------------->>>>>>>> DATA
 # Data to be clean
-national_mumber_data = [{"First name": "Hallo", "Family name": "2", "National number": "93.07.14-411.07"},
-                         {"First name": "John", "Family name": "Doe", "National number": "03.02.15-001.43"},
-                         {"First name": "Alice", "Family name": "Water", "National number": "93.07.14-411"}
-                         ]
+national_mumber_data = [
+    {"First name": "John", "Family name": "Doe", "National number": "03.02.15-001.43"},
+    {"First name": "Alice", "Family name": "Water", "National number": "93.07.14-411.07"},
+    {"First name": "Emma", "Family name": "Smith", "National number": "05.03.10-002.56"},
+    {"First name": "Lucas", "Family name": "Johnson", "National number": "12.11.20-003.12"},
+    {"First name": "Olivia", "Family name": "Brown", "National number": "01.01.09-004.78"},
+    {"First name": "Liam", "Family name": "Davis", "National number": "93.12.25-312.61"},
+    {"First name": "Noah", "Family name": "Martinez", "National number": "07.06.17-005.09"},
+    {"First name": "Sophia", "Family name": "Garcia", "National number": "13.04.22-006.35"},
+    {"First name": "James", "Family name": "Rodriguez", "National number": "10.10.19-007.22"},
+    {"First name": "Isabella", "Family name": "Martinez", "National number": "00.08.04-008.87"},
+    {"First name": "Elijah", "Family name": "Lopez", "National number": "02.02.14-009.45"},
+    {"First name": "Ava", "Family name": "Hernandez", "National number": "92.05.30-321.14"},
+    {"First name": "Mason", "Family name": "Wilson", "National number": "09.09.18-010.31"},
+    {"First name": "Mia", "Family name": "Moore", "National number": "11.07.21-011.23"},
+    {"First name": "Logan", "Family name": "Taylor", "National number": "06.01.16-012.48"},
+    {"First name": "Charlotte", "Family name": "Anderson", "National number": "94.09.11-512.36"},
+    {"First name": "Lucas", "Family name": "Thomas", "National number": "14.12.24-013.67"},
+    {"First name": "Amelia", "Family name": "Jackson", "National number": "08.05.17-014.98"},
+    {"First name": "Ethan", "Family name": "White", "National number": "99.03.27-714.29"},
+    {"First name": "Harper", "Family name": "Harris", "National number": "15.08.23-015.51"},
+]
+
+
+
 
 # Final Data
 clean_data = []
@@ -94,4 +115,4 @@ for i in national_mumber_data:
         generate_date_and_birthday("20")
 
 pp.pprint(clean_data)
-    
+
