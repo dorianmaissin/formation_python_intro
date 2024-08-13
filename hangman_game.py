@@ -25,7 +25,6 @@ def add_underscore(word):
 def game():
     random_word = generate_random_word()
     under_scorded_word = add_underscore(random_word)
-    new_under_scorded_word = ''.join(under_scorded_word)
     player_life = 5
     player_letter = []
     letter_list = []
@@ -40,15 +39,31 @@ def game():
         str_new_word = ''.join(new_word)
         print(str_new_word)
         print(f"Life: {player_life}")
-        user_letter  = input("Give me one letter from the alphabets\n")
-        if user_letter in random_word:
-            letter_list.append(user_letter)
-            print("You find a letter")
+        print(letter_list)
+        if str_new_word == random_word:
+            print("You won the game")
+            return
+        # elif player_life == 0:
+        #     print(f"Game Over, the word was {random_word}")    
         else:
-            player_letter.append(user_letter)
-            print("wrong letter ")
-            player_life -= 1
+            user_letter  = input("Give me one letter from the alphabets\n")
+            if user_letter in random_word:
+                letter_list.append(user_letter)
+                print("You find a letter")
 
+            elif player_life == 0:
+                print("Game Over")
+
+            else:
+                player_letter.append(user_letter)
+                print("wrong letter ")
+                player_life -= 1
+
+            if random_word == str_new_word:
+                print("You won the game")
+        
+    else:
+        print(f"Game Over, the word was {random_word}")
 
 game()
 
