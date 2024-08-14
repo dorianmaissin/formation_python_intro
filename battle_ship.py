@@ -136,16 +136,11 @@ def position_boat():
         if is_move_valid(place_boat_choice,player_placement_front,player_placement_back):
             place_boat(place_boat_choice,player_placement_front,player_placement_back,board_one)
             position_boat()
-        #place_boat(place_boat_choice,player_placement_front,player_placement_back)
-        #retirer place_boat_choice
-        #si boat_list est vide, c'est fini
-        #sinon, appel position_boat avec liste de bateau decrementé
         else :
             print("Invalide position")
             boat_list_one.append(int(place_boat_choice))
             boat_list_one.sort()
             position_boat()
-        #appel position_boat sans la liste de bateau decrementé
     else:
         display_bord(board_two)
         ask_user_input(boat_list_two)      
