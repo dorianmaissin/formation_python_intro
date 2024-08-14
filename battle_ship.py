@@ -67,14 +67,17 @@ def display_bord(array):
         print(x)
 
 def is_move_valid(place_boat_choice,player_placement_front,player_placement_back):
-    if len(player_placement_front) == 2 and len(player_placement_back) == 2:
+    if len(player_placement_front) == 2:
         front_col = player_placement_front[0]
         front_row = int(player_placement_front[1])
-        back_col = player_placement_back[0]
-        back_row = int(player_placement_back[1])
     else:
         front_col = player_placement_front[0]
         front_row = int(player_placement_front[-2:])
+        
+    if len(player_placement_back) == 2:
+        back_col = player_placement_back[0]
+        back_row = int(player_placement_back[1])
+    else:
         back_col = player_placement_back[0]
         back_row = int(player_placement_back[-2:])
     
@@ -113,16 +116,20 @@ def ask_user_input(boat_list):
     return place_boat_choice, player_placement_front, player_placement_back
 
 def place_boat(place_boat_choice,player_placement_front,player_placement_back,player_board,boat_position_list):
-    if len(player_placement_front) == 2 and len(player_placement_back) == 2:
+    if len(player_placement_front) == 2:
         front_col = player_placement_front[0]
         front_row = int(player_placement_front[1])
-        back_col = player_placement_back[0]
-        back_row = int(player_placement_back[1])
     else:
         front_col = player_placement_front[0]
         front_row = int(player_placement_front[-2:])
+        
+    if len(player_placement_back) == 2:
+        back_col = player_placement_back[0]
+        back_row = int(player_placement_back[1])
+    else:
         back_col = player_placement_back[0]
         back_row = int(player_placement_back[-2:])
+        
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
     front_col_index = None
     back_col_index = None
@@ -197,7 +204,7 @@ def battle(board,boat_list,score,player_one_position):
         pp.pprint(board)
         pp.pprint(empty_board)
         print(f"Your score is {score}")
-        print(player_one_position)
+        print(f"Target that as been hit {player_one_position}")
         attack_enemie = input(f"Give me a position to attack (exemple A3)\n")
         for x in boat_list:
             if attack_enemie in x:
@@ -249,5 +256,5 @@ def game():
         else:
             print("PLAYER TWO WIN THE GAME")
 
-# position_boat()
+position_boat()
 game()
